@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./StudentRegistration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <title>Student Registration</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav">
+            <h1 class="logo"><i class="ri-graduation-cap-line"></i> EduTrack</h1>
+            <!-- web view -->
+            <nav class="web-view">
+                <a href="./StudentRegistration.html">Register</a>
+                <a href="./StudentListing.html">All Students</a>
+            </nav>
+
+            <button class="hamburger" id="hamburger">
+                <i class="ri-menu-line"></i>
+            </button>
+
+
+            <!-- mobile view -->
+            <nav class="mobile-view" id="mobile-view">
+                <div class="mobile-nav">
+                    <i class="ri-close-line" id="close-nav"></i>
+                    <a href="./StudentListing.html">All Students</a>
+                    <a href="./StudentRegistration.html">Register</a>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <form class="student-form">
+                <h2>Student Registration Form</h2>
+                <input type="text" id="name" placeholder="Enter student name">
+                <input type="email" name="email" id="email" placeholder="Enter email">
+                <input type="text" name="status" id="status" value="Active" placeholder="Status">
+                <input type="file" name="image" id="image">
+                <button id="addStudent"><i class="ri-user-add-line"></i> Register Student</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EduTrack. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="./StudentRegistration.js"></script>
+    <script src="./StudentListing.js"></script>
+
+</body>
+
+</html>

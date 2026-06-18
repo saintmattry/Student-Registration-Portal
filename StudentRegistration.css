@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a0533, #3d1060, #7c3aed);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ── Header ── */
+header {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.web-view a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.web-view a:hover {
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 90%;
+}
+.ri-close-line {
+  font-size: 1.5rem;
+}
+
+.mobile-view {
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.mobile-view a {
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.mobile-nav {
+  border: 1px solid red;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  background-color: white;
+  color: black;
+}
+
+.mobile-view a:hover {
+  color: black;
+}
+
+/* ── Main ── */
+main {
+  padding-top: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ── Registration Form ── */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.student-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.student-form h2 {
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+  border-color: #a78bfa;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.3);
+}
+
+input[type="file"] {
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+#addStudent {
+  border: none;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#addStudent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(99, 102, 241, 0.5);
+}
+
+/* ── Student Cards ── */
+main #studentList {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.studentCard {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  width: 220px;
+}
+
+.studentCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.studentCard img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(167, 139, 250, 0.6);
+}
+
+.studentCard h3 {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.studentCard h5 {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.studentCard p {
+  background: rgba(167, 139, 250, 0.2);
+  color: #c4b5fd;
+  padding: 0.2rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.studentCard button {
+  margin-top: 0.5rem;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.studentCard button:hover {
+  background: #ef4444;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* ── Footer ── */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* .footer-hover {
+  display: none;
+}
+  */
+.display {
+  display: flex;
+}
+.hide {
+  display: none;
+}
+
+/* ── Responsiveness ── */
+@media (min-width: 768px) and (max-width: 1114px) {
+  .student-form {
+    width: 70%;
+  }
+}
+
+@media (max-width: 440px) {
+  .student-form {
+    width: 100%;
+  }
+  .student-form {
+    width: 100%;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .web-view {
+    display: none;
+  }
+}
